@@ -78,7 +78,7 @@ public class Utente {
 	}
 
 	public void validpass() throws Exception {
-		if (password.length() < 8 && password.length() > 12) {
+		if (password.length() < 8 || password.length() > 12) {
 
 			throw new Exception("La password deve essere tra gli 8 e i 12 caratteri!");
 		}
