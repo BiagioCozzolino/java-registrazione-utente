@@ -10,13 +10,19 @@ public class Utente {
 	private int eta;
 
 	// Costruttore
-	public Utente(String nome, String cognome, String email, String password, int eta) {
+	public Utente(String nome, String cognome, String email, String password, int eta) throws Exception {
 		super();
+
 		this.nome = nome;
 		this.cognome = cognome;
 		this.email = email;
 		this.password = password;
 		this.eta = eta;
+
+		this.validemail();
+		this.valideta();
+		this.validpass();
+
 	}
 
 	// Getter and Setters
@@ -83,6 +89,13 @@ public class Utente {
 			throw new Exception("Devi essere maggiorenne per continuare!");
 
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "Benvenuto " + nome + " " + cognome + ". Hai appena creato l'accout con email: " + email
+				+ " e Password: " + password + " e la tua età è di:  " + eta;
+
 	}
 
 }
